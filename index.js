@@ -11,6 +11,19 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
+
+
+// Assuming 'tutorials' is a global variable with an array of tutorial names
+
+function titleCased() {
+  return tutorials.map(function (tutorial) {
+    return tutorial.split(' ').map(function (word) {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    }).join(' ');
+  });
 }
+
+// Example Usage:
+// Assuming tutorials = ['javascript basics', 'html fundamentals', 'css essentials']
+const titleCasedTutorials = titleCased();
+console.log(titleCasedTutorials);
